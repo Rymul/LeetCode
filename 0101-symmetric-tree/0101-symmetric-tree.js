@@ -15,10 +15,10 @@ var isSymmetric = function(root) {
     return dfs(root.left, root.right);
 };
 
-const dfs = (leftNode, rightNode) => {
-    if(!leftNode && !rightNode) return true;
-    if(leftNode && !rightNode || !leftNode && rightNode || leftNode.val !== rightNode.val) {
+const dfs = (left, right) => {
+    if(!left && !right) return true;
+    if(left && !right || !left && right || left.val !== right.val) {
             return false;
     }
-    return dfs(leftNode.right, rightNode.left) && dfs(leftNode.left, rightNode.right); 
+    return dfs(left.right, right.left) && dfs(left.left, right.right); 
 };
